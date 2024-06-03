@@ -71,19 +71,19 @@ class G1 {
     }
 
     private void start() {
-        System.out.println("µµ¿ò¸»ÀÌ ÇÊ¿äÇÏ½Ã¸é \"help\" ¸¦ ÀÔ·ÂÇÏ½Ã¿À.");
+        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Ï½Ã¸ï¿½ \"help\" ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï½Ã¿ï¿½.");
         System.out.println("Select level (H/M/E)");
         Scanner sc = new Scanner(System.in);
         int correct = userLevel(sc.nextLine());
         if (correct == -1) {
             start();
         } else if (correct == 0) {
-            System.out.println("ÀÔ·Â°ªÀÌ Àß¸ø µÇ¾ú½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØ ÁÖ½Ê½Ã¿À.");
+            System.out.println("ï¿½Ô·Â°ï¿½ï¿½ï¿½ ï¿½ß¸ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½Ù½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Ö½Ê½Ã¿ï¿½.");
             start();
         } else {
             while (!G_OVER) {
                 String[] inputs = userInput(sc, correct);
-                sweepMine (Integer.parseInt(inputs[1]), 
+                sweepMine (Integer.parseInt(inputs[1]),
                    Integer.parseInt(inputs[2]), correct, inputs[0].toUpperCase());
                 showPlayerScreen(correct);
                 boolean victory = checkVictory(correct);
@@ -94,13 +94,13 @@ class G1 {
             }
         }
     }
-  
+
     private void printHelp() {
-        System.out.println("³­ÀÌµµ ¼±ÅÃ½Ã 'H', 'M', 'E'¸¦ ÀÔ·ÂÇÏ°í\n" +
-           " ¿£ÅÍ¸¦ Ä¡½Ã¸é ½ÃÀÛµË´Ï´Ù. \n ÁÂÇ¥°ª ÀÔ·Â½Ã" +
-           " [¸í·É¾î] [xÁÂÇ¥] [yÁÂÇ¥]·Î °ªÀ» ³Ö¾îÁÝ´Ï´Ù.\n" +
-           " ¸í·É¾î¿¡´Â 'P', 'F' °¡ ÀÖÀ¸¸ç 'P'´Â ¼±ÅÃÇÏ±â 'F'´Â ±ê¹ß ¼¼¿ì±â ÀÔ´Ï´Ù.\n" +
-           " ¿¹½Ã ¸í·É¾î: P 5 5");
+        System.out.println("ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½Ã½ï¿½ 'H', 'M', 'E'ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ï°ï¿½\n" +
+           " ï¿½ï¿½ï¿½Í¸ï¿½ Ä¡ï¿½Ã¸ï¿½ ï¿½ï¿½ï¿½ÛµË´Ï´ï¿½. \n ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½Ô·Â½ï¿½" +
+           " [ï¿½ï¿½É¾ï¿½] [xï¿½ï¿½Ç¥] [yï¿½ï¿½Ç¥]ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½Ý´Ï´ï¿½.\n" +
+           " ï¿½ï¿½É¾î¿¡ï¿½ï¿½ 'P', 'F' ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 'P'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ 'F'ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.\n" +
+           " ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É¾ï¿½: P 5 5");
     }
 
     private int userLevel (String level) {
@@ -116,23 +116,15 @@ class G1 {
     }
 
     private void selectEasy() {
-        System.out.println("½¬¿òÀ» ¼±ÅÃÇÏ¼Ì½À´Ï´Ù.");
-        System.out.println("Áö·Ú °¹¼ö:" + E_MINE_NUM);
+        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼Ì½ï¿½ï¿½Ï´ï¿½.");
+        System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½:" + E_MINE_NUM);
         char[][] grid = makeGrid(E_MATRIX_NUM);
         int gridTotNum = E_MATRIX_NUM * E_MATRIX_NUM;
         safeZoneNum = gridTotNum - E_MINE_NUM;
         printGrid(grid);
         answerGrid = generateMine(E_MINE_NUM, grid);
-        gridToNodes(grid);
+        //gridToNodes(grid);
         connectBlocks(E_MATRIX_NUM);
-    }
-
-    private void selectMedium() {
-
-    }
-
-    private void selectHard() {
-
     }
 
     private String[] userInput (Scanner sc, int length) {
@@ -340,7 +332,7 @@ class G1 {
         }
         return count;
     }
- 
+
     private void printGrid (char[][] grid) {
         System.out.println("Your Current Screen");
         System.out.printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");

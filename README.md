@@ -12,6 +12,26 @@
 [![Issues][issues-shield]][issues-url]
 
 
+## Regular user setup
+
+Only for Windows for batch execution. Other Operating System requires manual command execution.
+- Simply execute `Run.bat` file with `Run As Administrator` if you want to install JDK17 . <br/>
+- Execute `Run.bat` file if JDK17 is already set
+  Follow instructions from batch file. This batch will download and install jdk 17 and setup the environment variables if not set.
+
+
+If you wish to set up by your own, please install jdk17+ and have it set as environment variable. Then run following command at the root of the downloaded file.
+  `java -jar Mine-Sweeper.jar`
+
+
+## How to play game
+
+- You may click any block at the beginning of the game.
+- Number represents the amount of mines presented in nearby the adjacent blocks.
+- You may flag by right-clicking the block if you think that block is a minefield.
+- You can left-click the block if the block is safe from the mine.
+- One all minefields are flagged. The color will change to purple which is a victory.
+- Press F5 for a new game.
 
 <!-- PROJECT LOGO -->
 <br />
