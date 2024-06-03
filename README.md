@@ -16,7 +16,7 @@
 
 First, [download](https://github.com/MarcoBackman/Mine-Sweeper/archive/refs/heads/main.zip) this repository.
 
-Only for Windows for batch execution. Other Operating System requires manual command execution.
+Use batch file for Windows execution. Other operating system requires manual command execution.
 - Simply execute `Run.bat` file with `Run As Administrator` if you want to install JDK17 . <br/>
 - Execute `Run.bat` file if JDK17 is already set
   Follow instructions from batch file. This batch will download and install jdk 17 and setup the environment variables if not set.
